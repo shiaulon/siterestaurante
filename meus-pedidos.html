@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Pedidos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="meus-pedidos.html">Meus Pedidos</a></li> <!-- Nova página -->
+
+                <!-- Outros links -->
+            </ul>
+        </nav>
+    </header>
+
+    <section class="produtos-container" id="meus-pedidos-container">
+        <!-- Pedidos confirmados serão adicionados aqui dinamicamente -->
+    </section>
+
+    <footer>
+        <p>© 2024 Restaurante. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+            const container = document.getElementById('meus-pedidos-container');
+
+            pedidos.forEach(pedido => {
+                const card = document.createElement('div');
+                card.className = 'produto-card';
+                card.innerHTML = `
+                    <div class="produto-img">
+                        <img src="default.jpg" alt="${pedido.produto}">
+                    </div>
+                    <div class="produto-info">
+                        <h3>${pedido.produto}</h3>
+                        <p>Mesa: ${pedido.mesa} | Preço: R$ ${pedido.preco}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>

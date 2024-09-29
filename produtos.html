@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante - Produtos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style type="text/css">
+    .produto-info button {
+    padding: 10px 20px;
+    background-color: black;
+    width: 250px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+</style>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="meus-pedidos.html">Meus Pedidos</a></li> <!-- Nova página -->
+            </ul>
+        </nav>
+    </header>
+
+    <section class="produtos-container">
+        <div class="produto-card">
+            <div class="produto-img">
+                <img src="bebida1.jpeg" alt="Bebida 1">
+            </div>
+            <div class="produto-info">
+                <h3>Bebida 1</h3>
+                <p>Descrição da bebida 1. Preço: R$ 10,00</p>
+                <button onclick="abrirDialogo('Bebida 1', '10.00')">Pedir</button>
+            </div>
+        </div>
+        <div class="produto-card">
+            <div class="produto-img">
+                <img src="bebida2.jpeg" alt="Bebida 2">
+            </div>
+            <div class="produto-info">
+                <h3>Bebida 2</h3>
+                <p>Descrição da bebida 2. Preço: R$ 14,00</p>
+                <button onclick="abrirDialogo('Bebida 2', '14.00')">Pedir</button>
+            </div>
+        </div>
+        <div class="produto-card">
+            <div class="produto-img">
+                <img src="bebida3.jpeg" alt="Bebida 1">
+            </div>
+            <div class="produto-info">
+                <h3>Bebida 3</h3>
+                <p>Descrição da bebida 3. Preço: R$ 20,00</p>
+                <button onclick="abrirDialogo('Bebida 3', '20.00')">Pedir</button>
+            </div>
+        </div>
+        <div class="produto-card">
+            <div class="produto-img">
+                <img src="bebida4.jpeg" alt="Bebida 1">
+            </div>
+            <div class="produto-info">
+                <h3>Bebida 4</h3>
+                <p>Descrição da bebida 4. Preço: R$ 25,00</p>
+                <button onclick="abrirDialogo('Bebida 4', '25.00')">Pedir</button>
+            </div>
+        </div>
+        <!-- Adicione mais produtos aqui -->
+    </section>
+
+    <section class="produtos-container">
+        <div class="produto-card">
+            <div class="produto-img">
+                <img src="comida1.jpeg" alt="Bebida 1">
+            </div>
+            <div class="produto-info">
+                <h3>comida 1</h3>
+                <p>Descrição da comida 1. Preço: R$ 18,00</p>
+                <button onclick="abrirDialogo('comida 1', '18.00')">Pedir</button>
+            </div>
+        </div>
+        <div class="produto-card">
+            <div class="produto-img">
+                <img src="comida2.jpeg" alt="Bebida 2">
+            </div>
+            <div class="produto-info">
+                <h3>comida 2</h3>
+                <p>Descrição da comida 2. Preço: R$ 20,00</p>
+                <button onclick="abrirDialogo('comida 2', '20.00')">Pedir</button>
+            </div>
+        </div>
+        <div class="produto-card">
+            <div class="produto-img">
+                <img src="comida3.jpeg" alt="Bebida 1">
+            </div>
+            <div class="produto-info">
+                <h3>comida 3</h3>
+                <p>Descrição da comida 3. Preço: R$ 25,00</p>
+                <button onclick="abrirDialogo('comida 3', '25.00')">Pedir</button>
+            </div>
+        </div>
+        <div class="produto-card">
+            <div class="produto-img">
+                <img src="comida4.jpeg" alt="Bebida 1">
+            </div>
+            <div class="produto-info">
+                <h3>comida 4</h3>
+                <p>Descrição da comida 4. Preço: R$ 30,00</p>
+                <button onclick="abrirDialogo('comida 4', '30.00')">Pedir</button>
+            </div>
+        </div>
+        <!-- Adicione mais produtos aqui -->
+    </section>
+
+
+    <footer>
+        <p>© 2024 Restaurante. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Modal (pop-up) para o número da mesa -->
+    <div id="pedidoDialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharDialogo()">&times;</span>
+            <h2>Confirmar Pedido</h2>
+            <p id="produtoSelecionado"></p>
+            <label for="mesa">Número da Mesa:</label>
+            <input type="text" id="mesa" placeholder="Insira o número da mesa" required>
+            <button onclick="confirmarPedido()">Confirmar</button>
+        </div>
+    </div>
+
+    <script src="pedidos.js"></script>
+</body>
+</html>

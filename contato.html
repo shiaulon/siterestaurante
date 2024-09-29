@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante - Contato</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+</style>
+<body style="background-color: #ddd;">
+    <header>
+        <nav>
+            <ul style="list-style: none; display: flex; justify-content: center; background-color: BLACK; padding: 20px 0;">
+                <li style="margin: 0 15px;"><a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">Home</a></li>
+                <li style="margin: 0 15px;"><a href="sobre.html" style="color: white; text-decoration: none; font-weight: bold;">Sobre Nós</a></li>
+                <li style="margin: 0 15px;"><a href="produtos.html" style="color: white; text-decoration: none; font-weight: bold;">Produtos</a></li>
+                <li style="margin: 0 15px;"><a href="galeria.html" style="color: white; text-decoration: none; font-weight: bold;">Galeria</a></li>
+                <li style="margin: 0 15px;"><a href="contato.html" style="color: white; text-decoration: none; font-weight: bold;">Contato</a></li>
+                <li style="margin: 0 15px;"><a href="blog.html" style="color: white; text-decoration: none; font-weight: bold;">Blog</a></li>
+                <li style="margin: 0 15px;"><a href="meus-pedidos.html" style="color: white; text-decoration: none; font-weight: bold;">Meus Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section style="background-color: white; padding: 40px; max-width: 600px; margin: 40px auto; border-radius: 10px;">
+        <h1 style="text-align: center; margin-bottom: 30px;">Contato</h1>
+        <form action="mailto:contato@restaurante.com" method="post" enctype="text/plain">
+            <!-- Nome -->
+            <div style="margin-bottom: 20px;">
+                <label for="nome" style="display: block; margin-bottom: 5px; font-weight: bold;">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required 
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            
+            <!-- Email -->
+            <div style="margin-bottom: 20px;">
+                <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" 
+                       required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            
+            <!-- Telefone -->
+            <div style="margin-bottom: 20px;">
+                <label for="telefone" style="display: block; margin-bottom: 5px; font-weight: bold;">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" 
+                       pattern="\(\d{2}\) \d{5}-\d{4}" 
+                       title="Formato esperado: (XX) XXXXX-XXXX" 
+                       required 
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+            
+            <!-- Assunto -->
+            <div style="margin-bottom: 20px;">
+                <label for="assunto" style="display: block; margin-bottom: 5px; font-weight: bold;">Assunto:</label>
+                <select id="assunto" name="assunto" required 
+                        style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    <option value="" disabled selected>Selecione um assunto</option>
+                    <option value="Reservas">Reservas</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+            
+            <!-- Preferências -->
+            <div style="margin-bottom: 20px;">
+                <span style="display: block; margin-bottom: 5px; font-weight: bold;">Como você nos conheceu?</span>
+                <label style="margin-right: 10px;">
+                    <input type="radio" name="conheceu" value="Internet" required> Internet
+                </label>
+                <label style="margin-right: 10px;">
+                    <input type="radio" name="conheceu" value="Amigos"> Amigos
+                </label>
+                <label>
+                    <input type="radio" name="conheceu" value="Outros"> Outros
+                </label>
+            </div>
+            
+            <!-- Opções de Newsletter -->
+            <div style="margin-bottom: 20px;">
+                <label>
+                    <input type="checkbox" name="newsletter" value="sim"> Quero receber novidades e promoções
+                </label>
+            </div>
+            
+            <!-- Mensagem -->
+            <div style="margin-bottom: 20px;">
+                <label for="mensagem" style="display: block; margin-bottom: 5px; font-weight: bold;">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem" required 
+                          style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+            </div>
+            
+            <!-- Botões -->
+            <div style="text-align: center;">
+                <input type="submit" value="Enviar" 
+                       style="background-color: blue; color: white; padding: 10px 105px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px;">
+                <input type="reset" value="Resetar" 
+                       style="background-color: blue; color: white; padding: 10px 105px; border: none; border-radius: 5px; cursor: pointer;">
+            </div>
+        </form>
+    </section>
+    
+    <footer style="background-color: BLACK; color: white; text-align: center; padding: 20px 0;">
+        <p>© 2024 Restaurante. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
